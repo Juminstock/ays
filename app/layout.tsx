@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Bricolage_Grotesque } from "next/font/google";
 import "./globals.css";
+import Providers from '@/components/providers';
 
 const bricolage = Bricolage_Grotesque({
   subsets: ["latin"],
@@ -16,7 +17,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <body className={`${bricolage.variable} antialiased`}>
-          {children}
+        <Providers>{children}</Providers>
       </body>
     </html>
   );
